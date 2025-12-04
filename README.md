@@ -1,51 +1,69 @@
-# Van C naar WebAssembly Workshop
+# 🦀 Van C naar WebAssembly – IT Tools 2 Workshop
 
-Leer hoe je C‑code compileert naar WebAssembly en deze in de browser uitvoert.
+**Duur:** 2 uur  
+**Niveau:** Beginner → Gemiddeld  
+**Doel:** Begrijp en ervaar de kracht van WebAssembly via C.
 
-## 🧭 Doelstellingen
-- Begrijp de basisconcepten van WebAssembly  
-- Gebruik **Emscripten** om C te compileren naar `.wasm`  
-- Roep WebAssembly‑functies aan vanuit JavaScript  
-- Beheer geheugen en wissel tekst (strings) tussen C en JavaScript uit  
+---
+
+## 📋 Leerdoelen
+- Compileer C‑code naar WebAssembly (Wasm)  
+- Voer `.wasm` uit en communiceer ermee vanuit JavaScript  
+- **Vergelijk prestaties van Wasm vs JavaScript**  
+- Verwerk tekst en beheer geheugenuitwisseling tussen JS en C  
+
+---
 
 ## 🧰 Vereisten
-Installeer vooraf:
+Installeer dit vooraf:
 
 ```bash
 git clone https://github.com/emscripten-core/emsdk.git
-cd emsdk && ./emsdk install latest && ./emsdk activate latest
+cd emsdk
+./emsdk install latest
+./emsdk activate latest
 source ./emsdk_env.sh
 ```
 
-Controleer of alles werkt:
+Controleer met:
 ```bash
 emcc -v
 ```
 
-## 🧩 Oefeningen
-Elke stap bevindt zich in de map `/exercises`.
+---
 
-1. **Hello C** – compileer en voer een eenvoudig programma uit  
-2. **Add Function** – exporteer een C‑functie naar JavaScript  
-3. **Reverse String** – verwerk tekst in WebAssembly‑geheugen  
+## 🧩 Overzicht van oefeningen
+| Map | Beschrijving |
+|------|---------------|
+| 01_hello_c | Compileer & voer je eerste C‑code uit in de browser |
+| 02_add_function | Exporteer & roep een gecompileerde C‑functie aan vanuit JS |
+| 03_js_vs_wasm_benchmark | Vergelijk de snelheid van JavaScript en WebAssembly |
+| 04_reverse_string | Manipuleer strings met lineair geheugen |
 
-Volg de aanwijzingen in de opmerkingen binnen elk bestand.
-
-## 🔧 Bouwen en Uitvoeren
-```bash
-emcc source.c -o output.html
-emrun --no_browser --port 8080 .
-```
-
-Open vervolgens `http://localhost:8080/output.html` in je browser.
-
-## 🧪 Mini‑projectidee
-Combineer als laatste stap je functies tot een klein browsertooltje  
-(bijv. een tekstomkeerder of een rekenmachine).
-
-## 📚 Verdere Lectuur
-- https://emscripten.org/docs/  
-- https://developer.mozilla.org/docs/WebAssembly  
+Volg de stappen één voor één en let op de uitvoer in de terminal en browser.
 
 ---
+
+## 🧪 Benchmark‑doel
+Deelnemers meten de uitvoeringstijd van een grote berekening, zowel in JS als in gecompileerde C (Wasm).  
+We gebruiken `performance.now()` om de tijden te vergelijken.
+
+---
+
+## 🔧 Uitvoerinstructies
+```bash
+emcc file.c -o file.html
+emrun --no_browser --port 8080 .
+# of open file.html direct in de browser
+```
+
+---
+
+## 🚀 Na de Workshop
+- Experimenteer met optimalisatie‑vlaggen zoals `-O3` of `-Oz`  
+- Ontdek Rust → Wasm  
+- Probeer WASI voor uitvoering buiten de browser  
+
+---
+
 © IT‑Tools‑2 Workshop 2025
