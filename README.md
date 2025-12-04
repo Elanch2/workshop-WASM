@@ -1,15 +1,15 @@
-# From C to WebAssembly Workshop
+# Van C naar WebAssembly Workshop
 
-Learn how to compile C code into WebAssembly and run it in the browser.
+Leer hoe je C‑code compileert naar WebAssembly en deze in de browser uitvoert.
 
-## 🧭 Objectives
-- Understand basic WebAssembly concepts
-- Use **Emscripten** to compile C into `.wasm`
-- Call WebAssembly functions from JavaScript
-- Manage memory and exchange strings
+## 🧭 Doelstellingen
+- Begrijp de basisconcepten van WebAssembly  
+- Gebruik **Emscripten** om C te compileren naar `.wasm`  
+- Roep WebAssembly‑functies aan vanuit JavaScript  
+- Beheer geheugen en wissel tekst (strings) tussen C en JavaScript uit  
 
-## 🧰 Prerequisites
-Install ahead of time:
+## 🧰 Vereisten
+Installeer vooraf:
 
 ```bash
 git clone https://github.com/emscripten-core/emsdk.git
@@ -17,35 +17,35 @@ cd emsdk && ./emsdk install latest && ./emsdk activate latest
 source ./emsdk_env.sh
 ```
 
-Check:
+Controleer of alles werkt:
 ```bash
 emcc -v
 ```
 
-## 🧩 Exercises
-Each step is inside the `/exercises` folder.
+## 🧩 Oefeningen
+Elke stap bevindt zich in de map `/exercises`.
 
-1. **Hello C** – compile and run a simple program  
-2. **Add Function** – export a C function to JS  
-3. **Reverse String** – handle text in WebAssembly memory  
+1. **Hello C** – compileer en voer een eenvoudig programma uit  
+2. **Add Function** – exporteer een C‑functie naar JavaScript  
+3. **Reverse String** – verwerk tekst in WebAssembly‑geheugen  
 
-Follow the comments in each file.
+Volg de aanwijzingen in de opmerkingen binnen elk bestand.
 
-## 🔧 Build & Run
+## 🔧 Bouwen en Uitvoeren
 ```bash
 emcc source.c -o output.html
 emrun --no_browser --port 8080 .
 ```
 
-Then open `http://localhost:8080/output.html`.
+Open vervolgens `http://localhost:8080/output.html` in je browser.
 
-## 🧪 Mini‑Project Idea
-As a final step, combine your functions into a small browser tool
-(e.g. string reverser, calculator).
+## 🧪 Mini‑projectidee
+Combineer als laatste stap je functies tot een klein browsertooltje  
+(bijv. een tekstomkeerder of een rekenmachine).
 
-## 📚 Further Reading
-- https://emscripten.org/docs/
-- https://developer.mozilla.org/docs/WebAssembly
+## 📚 Verdere Lectuur
+- https://emscripten.org/docs/  
+- https://developer.mozilla.org/docs/WebAssembly  
 
 ---
 © IT‑Tools‑2 Workshop 2025
