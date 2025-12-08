@@ -16,7 +16,7 @@ int multiply(int a, int b) {
 }
 
 EMSCRIPTEN_KEEPALIVE
-int divide(int a, int b) {
+double divide(int a, int b) {
     if (b == 0) return 0; // Prevent division by zero
-    return a / b;
+    return (double)a / (double)b;
 }
