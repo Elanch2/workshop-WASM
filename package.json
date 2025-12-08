@@ -19,6 +19,8 @@
     "serve:demo": "npx http-server ./demo -p 8081",
     "serve:sepia": "npx http-server ./sepia-filter -p 8081",
     "serve:pixelate": "npx http-server ./pixelation -p 8081",
+    "serve:edge-js": "npx http-server ./edge-detection-js -p 8081",
+    "serve:edge-comparison": "npx http-server ./edge-comparison -p 8081",
     "clean": "rimraf ./exercises/*/*.html ./exercises/*/*.js ./exercises/*/*.wasm"
   },
   "devDependencies": {
