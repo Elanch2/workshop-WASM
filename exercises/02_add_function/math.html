@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition via WebAssembly</title>
+  </head>
+  <body>
+    <h1>Addition via WebAssembly</h1>
+    <button id="run">Run Demo</button>
+    <script>
+      var Module = {
+        onRuntimeInitialized: function() {
+          document.getElementById("run").onclick = () => {
+            const result = Module._add(12, 8);
+            alert(`12 + 8 = ${result}`);
+            console.log("Result from C:", result);
+          };
+        }
+      };
+    </script>
+    <script src="math.js"></script>
+  </body>
+</html>

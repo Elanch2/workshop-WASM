@@ -1,0 +1,22 @@
+{
+  "name": "wasm-workshop",
+  "version": "1.0.0",
+  "description": "WebAssembly + C workshop",
+  "scripts": {
+    "env": "cd ../emsdk && . ./emsdk_env.sh", 
+    "build:hello": "emcc ./exercises/01_hello_c/hello.c -O3 -o ./exercises/01_hello_c/hello.html",
+    "build:add": "emcc ./exercises/02_add_function/math.c -O3 -s \"EXPORTED_FUNCTIONS=['_add']\" -o ./exercises/02_add_function/math.js",
+    "build:benchmark": "emcc ./exercises/03_js_vs_wasm_benchmark/loop.c -O3 -s \"EXPORTED_FUNCTIONS=['_heavy_sum']\" -o ./exercises/03_js_vs_wasm_benchmark/loop.js",
+    "build:reverse": "emcc ./exercises/04_reverse_string/reverse.c -O3 -s \"EXPORTED_FUNCTIONS=['_reverse','_malloc','_free']\" -s \"EXPORTED_RUNTIME_METHODS=['UTF8ToString','stringToUTF8','lengthBytesUTF8']\" -s MODULARIZE=0 -o ./exercises/04_reverse_string/reverse.js",
+    "build:all": "npm run build:hello && npm run build:add && npm run build:benchmark && npm run build:reverse",
+    "serve:hello": "npx http-server ./exercises/01_hello_c -p 8081",
+    "serve:add": "npx http-server ./exercises/02_add_function -p 8081",
+    "serve:benchmark": "npx http-server ./exercises/03_js_vs_wasm_benchmark -p 8081",
+    "serve:reverse": "npx http-server ./exercises/04_reverse_string -p 8081",
+    "clean": "rimraf ./exercises/*/*.html ./exercises/*/*.js ./exercises/*/*.wasm"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "rimraf": "^6.0.1"
+  }
+}
